@@ -9,7 +9,7 @@
 
     <div class="wrapper">
     <div class="grid grid-small flex-nowrap align-center announcement-grid whitespace-nowrap fadeIn">
-      <div class="grid__item three-twelfths flex announcement-item announcement-left overflow-hidden small--hide align-center">
+      {% comment %} <div class="grid__item three-twelfths flex announcement-item announcement-left overflow-hidden small--hide align-center">
         {%- if section.settings.show_social -%}
           {%- render "social-medias" -%}
         {%- endif -%}
@@ -17,9 +17,9 @@
         {%- if section.settings.left_message -%}
           <span class="announcement-left-message rte">{{- section.settings.left_message -}}</span>
         {%- endif -%}
-      </div>
+      </div> {% endcomment %}
 
-      <div class="grid__item large-six-twelfths medium--six-twelfths announcement-item announcement-message overflow-hidden text-center{% if section.blocks.size > 1 %} slick slick-announcement{% endif %}"
+      <div class="grid__item announcement-item announcement-message overflow-hidden text-left{% if section.blocks.size > 1 %} slick slick-announcement{% endif %}"
         data-autoplayspeed="{{ section.settings.announcement_autoplayspeed | times: 1000 }}">
 
         {%- for block in section.blocks -%}
